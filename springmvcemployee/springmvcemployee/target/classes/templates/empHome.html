@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.prg">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<center>
+<h1>EMPLOYEE HOME PAGE</h1>
+    <br>
+    <a href="addemployee"><button>ADD EMPLOYEE</button></a>
+    <br><br>
+<table border="2" style="background:yellow" >
+    <tr cellpadding="10px">
+        <th>EMP_ID</th>
+        <th>EMP_NAME</th>
+        <th>EMP_SALARY</th>
+    </tr>
+    <tr th:each="project:${records}" style="background:black" cellpadding="10px">
+        <td th:text="${project.id}" style="color:white"></td>
+        <td th:text="${project.name}" style="color:white"></td>
+        <td th:text="${project.salary}" style="color:white"></td>
+    </tr>
+</table>
+
+
+</center>
+</body>
+</html>

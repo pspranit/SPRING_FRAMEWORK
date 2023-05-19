@@ -1,0 +1,29 @@
+package org.jspiders.springrestapi1;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+public class DemoController {
+
+    @GetMapping("/welcome")
+    public String getInfo()
+    {
+        return "welcome to REST PLATFORM";
+    }
+
+    @RequestMapping("/courses")
+    public List<String> getLanguage()
+    {
+        List<String> data= new ArrayList<>();
+        data.add("JAVA");
+        data.add("PYTHON");
+        data.add("PHP");
+
+        return data;
+    }
+}

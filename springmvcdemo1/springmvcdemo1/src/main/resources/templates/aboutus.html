@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>aboutus</title>
+    <style>
+        h1{
+        color:green;
+        }
+    </style>
+</head>
+<body>
+<h1>This is About Us web page </h1>
+<a href="addproduct"><button>ADD PRODUCT</button></a> <br> <br>
+<table border="2">
+    <tr>
+        <th>ITEM</th>
+        <th>COST</th>
+        <th>REVENUE</th>
+        <th>PROFIT</th>
+    </tr>
+    <tr th:each="product:${records}" th:style="${product.revenue-product.cost >=0 ? 'background:green' : 'background:red'}">
+        <td th:text="${product.item}"></td>
+        <td th:text="${product.cost}"></td>
+        <td th:text="${product.revenue}"></td>
+        <td th:text="${product.revenue-product.cost}" ></td>
+    </tr>
+
+</table>
+</body>
+</html>

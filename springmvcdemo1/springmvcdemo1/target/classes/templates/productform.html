@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>contactus</title>
+    <style>
+        h1{
+        color:purple;
+        }
+
+    </style>
+</head>
+<body>
+<center>
+<h1>This is Contact Us web page </h1>
+<form th:action="@{/saveproduct}" method="post" th:object="${store}" >
+
+   ITEM: <input type="text" name="item" th:field="*{item}"/> <br> <br>
+    COST: <input type="text" name="cost" th:field="*{cost}"/> <br> <br>
+    REVENUE : <input type="text" name="revenue" th:field="*{revenue}"/> <br> <br>
+   <input type="submit" value="SUBMIT"/>
+
+</form>
+</center>
+</body>
+</html>

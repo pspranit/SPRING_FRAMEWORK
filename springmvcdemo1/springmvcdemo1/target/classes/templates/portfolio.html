@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <style>
+        h1{
+        color:blue;
+        }
+    </style>
+</head>
+<body>
+<h1>Portfolio web page </h1>
+<table border="2">
+    <tr>
+        <th>PROJECT_ID</th>
+        <th>PROJECT_NAME</th>
+        <th>TECHNOLOGY</th>
+    </tr>
+    <tr th:each="project:${projects}">
+        <td th:text="${project.projectId}"></td>
+        <td th:text="${project.projectName}"></td>
+        <td th:text="${project.technology}"></td>
+    </tr>
+</table>
+</body>
+</html>
