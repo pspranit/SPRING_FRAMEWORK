@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean id="engine1" class="Constructor_Injection.PetrolEngine"></bean>
+    <bean id="engine2" class="Constructor_Injection.DieselEngine"></bean>
+
+    <bean id="car1" class="Constructor_Injection.PetrolCar">
+        <constructor-arg ref="engine1"></constructor-arg>
+    </bean>
+    <bean id="car2" class="Constructor_Injection.DieselCar">
+        <constructor-arg ref="engine2"></constructor-arg>
+    </bean>
+
+    <!--Object configuration of Mobile and SimCard -->
+
+    <bean id="card1" class="Setter_injection.Airtel"></bean>
+    <bean id="card2" class="Setter_injection.Jio"></bean>
+
+    <bean id="mobile1" class="Setter_injection.SmartPhone">
+        <property name="sc" ref="card1"></property>
+    </bean>
+    <bean id="mobile2" class="Setter_injection.FeaturePhone">
+        <property name="sc" ref="card2"></property>
+    </bean>
+
+    <!--Object configuration of LAPTOP -->
+
+    <!--<bean id="ps1" class="BothInjection.Ram"></bean>
+    <bean id="ps2" class="BothInjection.GraphicCard"></bean>
+
+    <bean id="laptop1" class="BothInjection.Dell">
+        <constructor-arg ref="ps1"></constructor-arg>
+    </bean>
+    <bean id="laptop2" class="BothInjection.HP">
+        <constructor-arg ref="ps2"></constructor-arg>
+    </bean>
+
+    <bean id="laptop1" class="BothInjection.GraphicCard">
+        <property name="laptop"></property>
+    </bean>-->
+
+    <bean id="atm" class="master.Printer"></bean>
+
+    <bean id="atm1" class="master.Atm">
+        <property name="print" ref="atm"></property>
+    </bean>
+
+</beans>
